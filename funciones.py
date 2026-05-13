@@ -121,29 +121,29 @@ def reporte_gastos():
             case "1":  
                 with open("datos.json", "r") as D:
                     data = json.load(D)
-                    tabla = []
+                tabla = []
                 total_general = 0
                 for categoria in data["gastos"]:
                     subtotal = 0
                     for gasto in data["gastos"][categoria]:
                         subtotal += gasto["precio"] * gasto["cantidad"]
-                        total_general += subtotal
+                    total_general += subtotal
                     tabla.append([categoria, subtotal])
         
-                    print("\nREPORTE DE GASTOS\n")
+                print("\nREPORTE DE GASTOS\n")
 
-                    print(tabulate(
-                    tabla,
-                    headers=["Categoria", "Total"],
-                    tablefmt="grid"
+                print(tabulate(
+                tabla,
+                headers=["Categoria", "Total"],
+                tablefmt="grid"
                     ))
 
-                    print("\nTotal general:", total_general)
+                print("\nTotal general:", total_general)
             case "2": 
                 with open("datos.json", "r") as D:
                     data = json.load(D)
 
-                tabla = []
+                
                 total_general = 0
                 reporte = {
                             "totales_por_categoria": {},
@@ -156,10 +156,8 @@ def reporte_gastos():
                             
                     reporte["totales_por_categoria"][categoria] = subtotal
                     total_general += subtotal
-                    tabla.append([categoria, subtotal])
                 reporte["total_general"] = total_general
                         
                 with open("reporte.json", "w") as R:
                     json.dump(reporte, R, indent=4)
                 print("\nReporte guardado en reporte.json")
-
