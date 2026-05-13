@@ -46,9 +46,7 @@ def registrar_gasto():
 
     for i in range(Ndatos):
 
-        categoria = input(
-            "Ingrese categoria (comida, entretenimiento, transporte): "
-        ).lower()
+        categoria = input("Ingrese categoria (comida, entretenimiento, transporte): ").lower()
 
         if categoria not in data["gastos"]:
             print("Categoria invalida")
@@ -75,9 +73,7 @@ def registrar_gasto():
 
         data["gastos"][categoria].append(nuevo_gasto)
 
-        guardar = input(
-            "Ingrese 'S' para guardar o 'C' para cancelar: "
-        ).upper()
+        guardar = input("Ingrese 'S' para guardar o 'C' para cancelar: ").upper()
 
         if guardar == "S":
 
@@ -121,20 +117,14 @@ def listargastos():
 
             case "1":
 
-                filtrar = input(
-                    "¿Quieres filtrar por dia o por mes?: "
-                ).lower()
+                filtrar = input("¿Quieres filtrar por dia o por mes?: ").lower()
 
                 if filtrar == "dia":
 
-                    categoria = input(
-                        "Ingrese la categoria: "
-                    ).lower()
+                    categoria = input("Ingrese la categoria: ").lower()
 
                     try:
-                        fechapedida = input(
-                            "Ingrese la fecha: "
-                        )
+                        fechapedida = input("Ingrese la fecha: ")
 
                         for gasto in data["gastos"][categoria]:
 
@@ -146,14 +136,10 @@ def listargastos():
 
                 elif filtrar == "mes":
 
-                    categoria = input(
-                        "Ingrese la categoria: "
-                    ).lower()
+                    categoria = input("Ingrese la categoria: ").lower()
 
                     try:
-                        fechapedida = input(
-                            "Ingrese el mes (ej: 2026-05): "
-                        )
+                        fechapedida = input("Ingrese el mes (ej: 2026-05): ")
 
                         for gasto in data["gastos"][categoria]:
 
@@ -224,18 +210,13 @@ def calcular_gastos():
 
                     for gastos in data["gastos"][categoria]:
 
-                        total += (
-                            gastos["precio"] *
-                            gastos["cantidad"]
-                        )
+                        total += (gastos["precio"] *gastos["cantidad"])
 
                 print(f"El total fue {total}")
 
             case "2":
 
-                categoria = input(
-                    "Ingrese la categoria que quieres calcular: "
-                ).lower()
+                categoria = input("Ingrese la categoria que quieres calcular: ").lower()
 
                 total = 0
 
@@ -243,10 +224,7 @@ def calcular_gastos():
 
                     for gastos in data["gastos"][categoria]:
 
-                        total += (
-                            gastos["precio"] *
-                            gastos["cantidad"]
-                        )
+                        total += (gastos["precio"] *gastos["cantidad"])
 
                     print(f"El total fue {total}")
 
@@ -277,9 +255,7 @@ def reporte_gastos():
         print("2. Archivo Json")
         print("3. SALIR")
 
-        eleccion = input(
-            "Ingrese lo que quieres hacer: "
-        )
+        eleccion = input("Ingrese lo que quieres hacer: ")
 
         match eleccion:
 
@@ -299,17 +275,11 @@ def reporte_gastos():
 
                         for gasto in data["gastos"][categoria]:
 
-                            subtotal += (
-                                gasto["precio"] *
-                                gasto["cantidad"]
-                            )
+                            subtotal += (gasto["precio"] *gasto["cantidad"])
 
                         total_general += subtotal
 
-                        tabla.append([
-                            categoria,
-                            subtotal
-                        ])
+                        tabla.append([categoria,subtotal])
 
                     print("\nREPORTE DE GASTOS\n")
 
@@ -344,14 +314,9 @@ def reporte_gastos():
 
                         for gasto in data["gastos"][categoria]:
 
-                            subtotal += (
-                                gasto["precio"] *
-                                gasto["cantidad"]
-                            )
+                            subtotal += (gasto["precio"] *gasto["cantidad"])
 
-                        reporte["totales_por_categoria"][
-                            categoria
-                        ] = subtotal
+                        reporte["totales_por_categoria"][categoria] = subtotal
 
                         total_general += subtotal
 
