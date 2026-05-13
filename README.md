@@ -3,3 +3,4 @@
 -Se puede pedir un reporte el cual se puede ver tanto en la consola como en un archivo .JSON creado a opcion del usuario.
 
 -Se requiere descargar los 3 archivos proporcionados para su correcto funcionamiento.
+
