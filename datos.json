@@ -1,40 +1,10 @@
 {
     "gastos": {
         "comida": [
-            {
-                "comida": "manzana",
-                "precio": 1000,
-                "cantidad": 1,
-                "fecha": "2026-05-12"
-            },
-            {
-                "comida": "pizza",
-                "precio": 1000,
-                "cantidad": 1,
-                "fecha": "2026-05-11"
-            },
-            {
-                "comida": "salchichon",
-                "precio": 4000,
-                "cantidad": 10,
-                "fecha": "2026-05-13"
-            }
         ],
         "entretenimiento": [
-            {
-                "entretenimiento": "videojuegos",
-                "precio": 20000,
-                "cantidad": 3,
-                "fecha": "2026-05-07"
-            }
         ],
         "transporte": [
-            {
-                "transporte": "camion",
-                "precio": 100,
-                "cantidad": 1,
-                "fecha": "2026-05-12"
-            }
         ]
     }
 }
